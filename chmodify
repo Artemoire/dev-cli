@@ -1,0 +1,11 @@
+#!/bin/bash
+PROJECT_FILES=$(find . -type f | grep -v '^\.\/\.')
+
+for file in $PROJECT_FILES
+do
+  if grep '^#!/bin/bash' "$file" > /dev/null; then
+    echo "chmod +x $file" && chmod +x $file
+  else
+    echo "chmod -x $file" && chmod -x $file
+  fi
+done

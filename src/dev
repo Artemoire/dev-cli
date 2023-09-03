@@ -1,0 +1,5 @@
+#!/bin/bash
+DEVCLI_WORKDIR=$(cd $(dirname $0) && pwd)
+DEVCLI_PROFILE="<none>"
+
+. $DEVCLI_WORKDIR/help/index
