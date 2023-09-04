@@ -1,0 +1,13 @@
+#!/bin/bash
+
+__check_valid_ssh_identity() {
+    if ssh-add -l | grep -n "$DEVCLI_SSH_COMMENT" | grep -q '^1:'; then
+        return 0
+    else
+        return 1
+    fi
+}
+
+__set_ssh_identity() {
+  ssh-add -Dq && ssh-add $DEVCLI_SSH_KEY
+}

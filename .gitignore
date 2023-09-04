@@ -1,0 +1,2 @@
+src/conf/*
+!src/conf/__profile

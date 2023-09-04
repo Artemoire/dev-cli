@@ -1,0 +1,13 @@
+#!/bin/bash
+echo "
+Program: dev-cli
+Author: Dejan Tot
+Version: 0.0.1
+Profile: $DEVCLI_PROFILE
+
+Usage: dev [command]
+
+Commands:
+  profile      Configure dev profile
+  command_2    summary of command_2
+"

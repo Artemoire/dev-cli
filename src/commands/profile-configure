@@ -1,0 +1,16 @@
+#!/bin/bash
+
+__assert_argdef "<profile-name>" "Usage: dev profile configure <profile-name>" $1
+
+if [[ "$1" =~ [^a-zA-Z0-9-] ]]; then
+  echo "Syntax error: Argument <profile-name> can only contain alphanumerics and hyphens."
+  exit 1
+fi
+
+! __check_file_exists $DEVCLI_WORKDIR/conf/$1 && echo "DEVCLI_GIT_ORG=
+DEVCLI_GIT_USER=
+DEVCLI_GIT_EMAIL=
+DEVCLI_SSH_KEY=
+DEVCLI_SSH_COMMENT=
+DEVCLI_WORKSPACE=" > $DEVCLI_WORKDIR/conf/$1
+nano $DEVCLI_WORKDIR/conf/$1

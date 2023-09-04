@@ -1,0 +1,22 @@
+#!/bin/bash
+
+arg="$1"
+shift
+case "$arg" in
+  configure)
+  . $DEVCLI_WORKDIR/commands/profile-configure $@
+  ;;
+  default)
+  . $DEVCLI_WORKDIR/commands/profile-default $@
+  ;;
+  sync)
+  . $DEVCLI_WORKDIR/commands/profile-sync
+  ;;
+  help)
+  . $DEVCLI_WORKDIR/help/commands/profile
+  ;;
+  *)
+  . $DEVCLI_WORKDIR/help/commands/profile
+  exit 1
+  ;;
+esac

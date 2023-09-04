@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "
+Program: dev-cli
+Author: Dejan Tot
+Version: 0.0.1
+Profile: $DEVCLI_PROFILE
+
+Usage: dev profile [sub-command]
+
+Sub Commands:
+  configure    Create or update a profile configuration
+  default      Set default profile
+  sync         Syncs environment to configuration provided in the default profile.
+  help         Show command help
+"

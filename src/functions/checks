@@ -1,0 +1,10 @@
+#!/bin/bash
+
+__check_file_exists() {
+    local file="$1"
+    if [ -e "$file" ]; then
+        return 0
+    else
+        return 1
+    fi
+}

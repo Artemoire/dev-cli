@@ -1,5 +1,20 @@
 #!/bin/bash
 DEVCLI_WORKDIR=$(cd $(dirname $0) && pwd)
-DEVCLI_PROFILE="<none>"
+. $DEVCLI_WORKDIR/functions/assertions
+. $DEVCLI_WORKDIR/functions/ssh
+. $DEVCLI_WORKDIR/functions/checks
 
-. $DEVCLI_WORKDIR/help/index
+# TODO: assert valid profile if not none
+. $DEVCLI_WORKDIR/conf/__profile
+
+arg="$1"
+shift
+case "$arg" in
+  profile)
+  . $DEVCLI_WORKDIR/commands/profile $@ 
+  ;;
+  *)
+  . $DEVCLI_WORKDIR/help/dev
+  exit 1
+  ;;
+esac
