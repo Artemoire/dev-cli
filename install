@@ -1,0 +1,21 @@
+#!/bin/bash
+set -e
+
+if [ $# -eq 0 ]; then
+  DEVCLI_INSTALL_DIR=$HOME/bin/dev-cli # TODO: change ~ into $HOME ?
+else
+  DEVCLI_INSTALL_DIR="$1"
+fi
+mkdir -p $DEVCLI_INSTALL_DIR
+cp -r ./src/* $DEVCLI_INSTALL_DIR
+
+sed -i '/# Artemoire\/dev-cli/,/^$/d' ~/.bashrc
+echo "# Artemoire/dev-cli
+export PATH=\"$DEVCLI_INSTALL_DIR:\$PATH\"
+" >> ~/.bashrc
+echo "Installed dev-cli into $DEVCLI_INSTALL_DIR"
+
+
+
+PATH=$PATH:$DEVCLI_INSTALL_DIR
+export PATH

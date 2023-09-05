@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+# TODO: should i dynamically resolve location using $(which dev) ?
+if [ $# -eq 0 ]; then
+  DEVCLI_INSTALL_DIR=~/bin/dev-cli
+else
+  DEVCLI_INSTALL_DIR="$1"
+fi
+
+rm -r $DEVCLI_INSTALL_DIR
+sed -i '/# Artemoire\/dev-cli/,/^$/d' ~/.bashrc
+echo "Removed dev-cli runtime. To remove configuration run the following command: rm -r ~/.dev-cli"
