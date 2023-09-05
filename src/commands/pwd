@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Load profile env
+. $DEVCLI_WORKDIR/conf/$DEVCLI_PROFILE
+
+if [ -z "$1" ]; then
+  echo $DEVCLI_WORKSPACE
+else
+  echo $DEVCLI_WORKSPACE/$1
+fi

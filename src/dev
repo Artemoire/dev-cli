@@ -13,6 +13,9 @@ case "$arg" in
   profile)
   . $DEVCLI_WORKDIR/commands/profile $@ 
   ;;
+  pwd)
+  . $DEVCLI_WORKDIR/commands/pwd $@
+  ;;
   *)
   . $DEVCLI_WORKDIR/help/dev
   exit 1

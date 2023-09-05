@@ -9,5 +9,6 @@ Usage: dev [command]
 
 Commands:
   profile      Configure dev profile
+  pwd          Prints workspace path with optional [project-dir] argument.
   command_2    summary of command_2
 "
