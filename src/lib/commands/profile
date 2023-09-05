@@ -6,8 +6,8 @@ case "$arg" in
   configure)
   . $DEVCLI_WORKDIR/lib/commands/profile-configure $@
   ;;
-  default)
-  . $DEVCLI_WORKDIR/lib/commands/profile-default $@
+  set)
+  . $DEVCLI_WORKDIR/lib/commands/profile-set $@
   ;;
   sync)
   . $DEVCLI_WORKDIR/lib/commands/profile-sync

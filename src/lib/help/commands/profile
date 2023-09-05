@@ -9,7 +9,7 @@ Usage: dev profile [sub-command]
 
 Sub Commands:
   configure    Create or update a profile configuration
-  default      Set default profile
+  set          Set default profile
   sync         Syncs environment to configuration provided in the default profile.
   help         Show command help
 "
