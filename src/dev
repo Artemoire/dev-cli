@@ -1,23 +1,23 @@
 #!/bin/bash
 DEVCLI_WORKDIR=$(cd $(dirname $0) && pwd)
-. $DEVCLI_WORKDIR/functions/assertions
-. $DEVCLI_WORKDIR/functions/ssh
-. $DEVCLI_WORKDIR/functions/checks
+. $DEVCLI_WORKDIR/lib/functions/assertions
+. $DEVCLI_WORKDIR/lib/functions/ssh
+. $DEVCLI_WORKDIR/lib/functions/checks
 
 # TODO: assert valid profile if not none
-. $DEVCLI_WORKDIR/conf/__profile
+. $DEVCLI_WORKDIR/cfg/__profile
 
 arg="$1"
 shift
 case "$arg" in
   profile)
-  . $DEVCLI_WORKDIR/commands/profile $@ 
+  . $DEVCLI_WORKDIR/lib/commands/profile $@ 
   ;;
   pwd)
-  . $DEVCLI_WORKDIR/commands/pwd $@
+  . $DEVCLI_WORKDIR/lib/commands/pwd $@
   ;;
   *)
-  . $DEVCLI_WORKDIR/help/dev
+  . $DEVCLI_WORKDIR/lib/help/dev
   exit 1
   ;;
 esac

@@ -1,2 +1,2 @@
-src/conf/*
-!src/conf/__profile
+src/cfg/*
+!src/cfg/__profile

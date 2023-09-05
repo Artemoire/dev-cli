@@ -1,0 +1,8 @@
+#!/bin/bash
+
+__assert_argdef "<profile-name>" "Usage: dev profile default <profile-name>" $1
+
+! __check_file_exists $DEVCLI_WORKDIR/cfg/$1 && echo "Invalid <profile-name>: Profile \"$1\" doesn't exist." && exit 1
+
+echo "DEVCLI_PROFILE=$1" > $DEVCLI_WORKDIR/cfg/__profile
+echo "Set default profile to ($1)."

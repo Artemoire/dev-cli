@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load profile env
-. $DEVCLI_WORKDIR/conf/$DEVCLI_PROFILE
+. $DEVCLI_WORKDIR/cfg/$DEVCLI_PROFILE
 
 if ! __check_valid_ssh_identity; then
   echo "Configuring ssh agent..." && __set_ssh_identity
