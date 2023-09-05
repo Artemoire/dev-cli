@@ -3,9 +3,9 @@ DEVCLI_WORKDIR=$(cd $(dirname $0) && pwd)
 . $DEVCLI_WORKDIR/lib/functions/assertions
 . $DEVCLI_WORKDIR/lib/functions/ssh
 . $DEVCLI_WORKDIR/lib/functions/checks
+. $DEVCLI_WORKDIR/lib/functions/profile
 
-# TODO: assert valid profile if not none
-. $DEVCLI_WORKDIR/cfg/__profile
+__load_profile
 
 arg="$1"
 shift
