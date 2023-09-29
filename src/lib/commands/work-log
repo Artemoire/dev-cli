@@ -12,6 +12,4 @@ fi
 
 __assert_argdef "<message>" "Usage: dev work log <message>" $1
 
-echo "$@"
-
-# echo "LOG: $@" >> $DEVCLI_WORKLOG_FILE
+echo "LOG: $@" >> $DEVCLI_WORKLOG_FILE
