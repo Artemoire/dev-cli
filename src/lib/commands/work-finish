@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ ! -e $DEVCLI_WORKLOG_FILE ]; then 
+  echo "Working day $DEVCLI_WORKLOG_DATE ($DEVCLI_PROFILE) not started"
+  exit 1
+fi
+
+if tail -n 1 "$DEVCLI_WORKLOG_FILE" | grep -q "^FINISH:"; then
+  echo "Working day $DEVCLI_WORKLOG_DATE ($DEVCLI_PROFILE) already finished"
+  exit 1
+fi
+
+echo "FINISH: $(date "+%d-%m-%Y %H:%M")" >> $DEVCLI_WORKLOG_FILE

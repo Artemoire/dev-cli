@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -e $DEVCLI_WORKLOG_FILE ]; then 
+  echo "Working day $DEVCLI_WORKLOG_DATE ($DEVCLI_PROFILE) already started"
+  exit 1
+fi
+
+echo "START: $(date "+%d-%m-%Y %H:%M")" > $DEVCLI_WORKLOG_FILE
+echo "Working day started at $(date "+%H:%M"). Good Luck!"

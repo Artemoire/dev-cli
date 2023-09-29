@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ ! -e $DEVCLI_WORKLOG_FILE ]; then 
+  echo "Working day $DEVCLI_WORKLOG_DATE ($DEVCLI_PROFILE) not started"
+  exit 1
+fi
+
+cat $DEVCLI_WORKLOG_FILE

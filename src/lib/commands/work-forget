@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ ! -e $DEVCLI_WORKLOG_FILE ]; then 
+  echo "Working day $DEVCLI_WORKLOG_DATE ($DEVCLI_PROFILE) not started"
+  exit 1
+fi
+
+__assert_argdef "<profile-name>" "Usage: dev work forget <profile-name>" $1
+
+if [ "$DEVCLI_PROFILE" != "$1" ]; then
+  echo "Can't forget work day for profile ($1). Current profile is ($DEVCLI_PROFILE)"
+  exit 1
+fi
+
+echo "Do you remember working on $DEVCLI_WORKLOG_DATE ? I don't..."
+rm $DEVCLI_WORKLOG_FILE

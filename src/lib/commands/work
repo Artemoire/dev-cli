@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Load profile env
+. $DEVCLI_USER_DIR/$DEVCLI_PROFILE
+
+# Set enviroment variables for work logs
+DEVCLI_WORKLOG_DIR=$DEVCLI_USER_DIR/$DEVCLI_PROFILE-work
+DEVCLI_WORKLOG_DATE=$(date +%d-%m-%Y)
+DEVCLI_WORKLOG_FILE=$DEVCLI_WORKLOG_DIR/log-$DEVCLI_WORKLOG_DATE
+
+# Create profile worklog directory if it doesn't exist
+if [ ! -e "$DEVCLI_WORKLOG_DIR" ]; then
+  echo "Congratulations on starting to track your work!"
+  mkdir $DEVCLI_WORKLOG_DIR
+fi
+
+arg="$1"
+shift
+case "$arg" in
+  start)
+  . $DEVCLI_WORKDIR/lib/commands/work-start $@
+  ;;
+  log)
+  . $DEVCLI_WORKDIR/lib/commands/work-log
+  ;;
+  finish)
+  . $DEVCLI_WORKDIR/lib/commands/work-finish
+  ;;
+  report)
+  . $DEVCLI_WORKDIR/lib/commands/work-report
+  ;;
+  forget)
+  . $DEVCLI_WORKDIR/lib/commands/work-forget
+  ;;
+  help)
+  . $DEVCLI_WORKDIR/lib/help/commands/work
+  ;;
+  *)
+  . $DEVCLI_WORKDIR/lib/help/commands/work
+  exit 1
+  ;;
+esac

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Load profile env
-. $DEVCLI_PROFILE_DIR/$DEVCLI_PROFILE
+. $DEVCLI_USER_DIR/$DEVCLI_PROFILE
 
 if [ -z "$1" ]; then
   echo $DEVCLI_WORKSPACE

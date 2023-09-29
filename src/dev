@@ -1,5 +1,7 @@
 #!/bin/bash
 DEVCLI_WORKDIR=$(cd $(dirname $0) && pwd)
+DEVCLI_USER_DIR=~/.dev-cli
+
 . $DEVCLI_WORKDIR/lib/functions/assertions
 . $DEVCLI_WORKDIR/lib/functions/ssh
 . $DEVCLI_WORKDIR/lib/functions/checks
@@ -15,6 +17,9 @@ case "$arg" in
   ;;
   pwd)
   . $DEVCLI_WORKDIR/lib/commands/pwd $@
+  ;;
+  work)
+  . $DEVCLI_WORKDIR/lib/commands/work $@
   ;;
   *)
   . $DEVCLI_WORKDIR/lib/help/dev

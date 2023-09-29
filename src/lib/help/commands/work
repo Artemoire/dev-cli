@@ -1,0 +1,17 @@
+#!/bin/bash
+echo "
+Program: dev-cli
+Author: Dejan Tot
+Version: 0.0.1
+Profile: $DEVCLI_PROFILE
+
+Usage: dev work [sub-command]
+
+Sub Commands:
+  start       Start the working day
+  log         Print a work log to the current work day
+  finish      End the working day
+  report      Print work day
+  forget      You worked today !? Isn't it a saturday ??
+  help        Show command help
+"
